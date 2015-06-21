@@ -16,7 +16,7 @@ require_once __DIR__.'/../../../src/app.php';
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-$app->match('/__TABLENAME__/list', function (Symfony\Component\HttpFoundation\Request $request) use ($app) {  
+$app->match('/PLATS_TYPES/list', function (Symfony\Component\HttpFoundation\Request $request) use ($app) {  
     $start = 0;
     $vars = $request->query->all();
     $qsStart = (int)$vars["start"];
@@ -43,11 +43,19 @@ $app->match('/__TABLENAME__/list', function (Symfony\Component\HttpFoundation\Re
     }
     
     $table_columns = array(
-        __TABLECOLUMNS_ARRAY__
+        		'plt_id', 
+		'plt_libelle', 
+		'plt_image_path', 
+		'plt_description', 
+
     );
 
     $table_columns_names = array(
-        __TABLECOLUMNS_NAMES_ARRAY__
+        		'', 
+		'', 
+		'', 
+		'', 
+
     );
 
 
@@ -69,15 +77,16 @@ $app->match('/__TABLENAME__/list', function (Symfony\Component\HttpFoundation\Re
         $i = $i + 1;
     }
     
-    $recordsTotal = $app['db']->executeQuery("SELECT * FROM `__TABLENAME__`" . $whereClause . $orderClause)->rowCount();
+    $recordsTotal = $app['db']->executeQuery("SELECT * FROM `PLATS_TYPES`" . $whereClause . $orderClause)->rowCount();
     
-    $find_sql = "SELECT * FROM `__TABLENAME__`". $whereClause . $orderClause . " LIMIT ". $index . "," . $rowsPerPage;
+    $find_sql = "SELECT * FROM `PLATS_TYPES`". $whereClause . $orderClause . " LIMIT ". $index . "," . $rowsPerPage;
     $rows_sql = $app['db']->fetchAll($find_sql, array());
 
     foreach($rows_sql as $row_key => $row_sql){
         for($i = 0; $i < count($table_columns); $i++){
 
-__EXTERNALS_FOR_LIST__
+		$rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
+
 
         }
     }    
@@ -91,36 +100,46 @@ __EXTERNALS_FOR_LIST__
     return new Symfony\Component\HttpFoundation\Response(json_encode($queryData), 200);
 });
 
-$app->match('/__TABLENAME__', function () use ($app) {
+$app->match('/PLATS_TYPES', function () use ($app) {
     
 	$table_columns = array(
-__TABLECOLUMNS_ARRAY__
+		'plt_id', 
+		'plt_libelle', 
+		'plt_image_path', 
+		'plt_description', 
+
     );
 
-    $primary_key = "__TABLE_PRIMARYKEY__";	
+    $primary_key = "plt_id";	
 
-    return $app['twig']->render('__TABLENAME__/list.html.twig', array(
+    return $app['twig']->render('PLATS_TYPES/list.html.twig', array(
     	"table_columns" => $table_columns,
         "table_columns_names" => $table_columns_names,
         "primary_key" => $primary_key
     ));
         
 })
-->bind('__TABLENAME___list');
+->bind('PLATS_TYPES_list');
 
 
 
-$app->match('/__TABLENAME__/create', function () use ($app) {
+$app->match('/PLATS_TYPES/create', function () use ($app) {
     
     $initial_data = array(
-__TABLECOLUMNS_INITIALDATA_EMPTY_ARRAY__
+		'plt_libelle' => '', 
+		'plt_image_path' => '', 
+		'plt_description' => '', 
+
     );
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-__EXTERNALSFIELDS_FOR_FORM__
 
-__FIELDS_FOR_FORM__
+
+	$form = $form->add('plt_libelle', 'text', array('required' => true));
+	$form = $form->add('plt_image_path', 'text', array('required' => false));
+	$form = $form->add('plt_description', 'text', array('required' => false));
+
 
     $form = $form->getForm();
 
@@ -131,33 +150,33 @@ __FIELDS_FOR_FORM__
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `__TABLENAME__` (__INSERT_QUERY_FIELDS__) VALUES (__INSERT_QUERY_VALUES__)";
-            $app['db']->executeUpdate($update_query, array(__INSERT_EXECUTE_FIELDS__));            
+            $update_query = "INSERT INTO `PLATS_TYPES` (`plt_libelle`, `plt_image_path`, `plt_description`) VALUES (?, ?, ?)";
+            $app['db']->executeUpdate($update_query, array($data['plt_libelle'], $data['plt_image_path'], $data['plt_description']));            
 
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => '__TABLENAME__ created!',
+                    'message' => 'PLATS_TYPES created!',
                 )
             );
-            return $app->redirect($app['url_generator']->generate('__TABLENAME___list'));
+            return $app->redirect($app['url_generator']->generate('PLATS_TYPES_list'));
 
         }
     }
 
-    return $app['twig']->render('__TABLENAME__/create.html.twig', array(
+    return $app['twig']->render('PLATS_TYPES/create.html.twig', array(
         "form" => $form->createView()
     ));
         
 })
-->bind('__TABLENAME___create');
+->bind('PLATS_TYPES_create');
 
 
 
-$app->match('/__TABLENAME__/edit/{id}', function ($id) use ($app) {
+$app->match('/PLATS_TYPES/edit/{id}', function ($id) use ($app) {
 
-    $find_sql = "SELECT * FROM `__TABLENAME__` WHERE `__TABLE_PRIMARYKEY__` = ?";
+    $find_sql = "SELECT * FROM `PLATS_TYPES` WHERE `plt_id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
 
     if(!$row_sql){
@@ -167,19 +186,25 @@ $app->match('/__TABLENAME__/edit/{id}', function ($id) use ($app) {
                 'message' => 'Row not found!',
             )
         );        
-        return $app->redirect($app['url_generator']->generate('__TABLENAME___list'));
+        return $app->redirect($app['url_generator']->generate('PLATS_TYPES_list'));
     }
 
     
     $initial_data = array(
-__TABLECOLUMNS_INITIALDATA_ARRAY__
+		'plt_libelle' => $row_sql['plt_libelle'], 
+		'plt_image_path' => $row_sql['plt_image_path'], 
+		'plt_description' => $row_sql['plt_description'], 
+
     );
 
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-__EXTERNALSFIELDS_FOR_FORM__
-__FIELDS_FOR_FORM__
+
+	$form = $form->add('plt_libelle', 'text', array('required' => true));
+	$form = $form->add('plt_image_path', 'text', array('required' => false));
+	$form = $form->add('plt_description', 'text', array('required' => false));
+
 
     $form = $form->getForm();
 
@@ -190,44 +215,44 @@ __FIELDS_FOR_FORM__
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `__TABLENAME__` SET __UPDATE_QUERY_FIELDS__ WHERE `__TABLE_PRIMARYKEY__` = ?";
-            $app['db']->executeUpdate($update_query, array(__UPDATE_EXECUTE_FIELDS__, $id));            
+            $update_query = "UPDATE `PLATS_TYPES` SET `plt_libelle` = ?, `plt_image_path` = ?, `plt_description` = ? WHERE `plt_id` = ?";
+            $app['db']->executeUpdate($update_query, array($data['plt_libelle'], $data['plt_image_path'], $data['plt_description'], $id));            
 
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => '__TABLENAME__ edited!',
+                    'message' => 'PLATS_TYPES edited!',
                 )
             );
-            return $app->redirect($app['url_generator']->generate('__TABLENAME___edit', array("id" => $id)));
+            return $app->redirect($app['url_generator']->generate('PLATS_TYPES_edit', array("id" => $id)));
 
         }
     }
 
-    return $app['twig']->render('__TABLENAME__/edit.html.twig', array(
+    return $app['twig']->render('PLATS_TYPES/edit.html.twig', array(
         "form" => $form->createView(),
         "id" => $id
     ));
         
 })
-->bind('__TABLENAME___edit');
+->bind('PLATS_TYPES_edit');
 
 
 
-$app->match('/__TABLENAME__/delete/{id}', function ($id) use ($app) {
+$app->match('/PLATS_TYPES/delete/{id}', function ($id) use ($app) {
 
-    $find_sql = "SELECT * FROM `__TABLENAME__` WHERE `__TABLE_PRIMARYKEY__` = ?";
+    $find_sql = "SELECT * FROM `PLATS_TYPES` WHERE `plt_id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
 
     if($row_sql){
-        $delete_query = "DELETE FROM `__TABLENAME__` WHERE `__TABLE_PRIMARYKEY__` = ?";
+        $delete_query = "DELETE FROM `PLATS_TYPES` WHERE `plt_id` = ?";
         $app['db']->executeUpdate($delete_query, array($id));
 
         $app['session']->getFlashBag()->add(
             'success',
             array(
-                'message' => '__TABLENAME__ deleted!',
+                'message' => 'PLATS_TYPES deleted!',
             )
         );
     }
@@ -240,10 +265,10 @@ $app->match('/__TABLENAME__/delete/{id}', function ($id) use ($app) {
         );  
     }
 
-    return $app->redirect($app['url_generator']->generate('__TABLENAME___list'));
+    return $app->redirect($app['url_generator']->generate('PLATS_TYPES_list'));
 
 })
-->bind('__TABLENAME___delete');
+->bind('PLATS_TYPES_delete');
 
 
 

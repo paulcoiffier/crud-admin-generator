@@ -1,4 +1,43 @@
 {% extends 'ag_menu.html.twig' %}
 
 {% block menu %}
+
+<li class="treeview {% if option is defined and (option == 'PLATS_list' or option == 'PLATS_create' or option == 'PLATS_edit') %}active{% endif %}">
+    <a href="#">
+        <i class="fa fa-folder-o"></i>
+        <span>PLATS</span>
+        <i class="fa pull-right fa-angle-right"></i>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+        <li {% if option is defined and option == 'PLATS_list' %}class="active"{% endif %}><a href="{{ path('PLATS_list') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Liste</a></li>
+        <li {% if option is defined and option == 'PLATS_create' %}class="active"{% endif %}><a href="{{ path('PLATS_create') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Créer</a></li>
+    </ul>
+</li>
+
+<li class="treeview {% if option is defined and (option == 'PLATS_TYPES_list' or option == 'PLATS_TYPES_create' or option == 'PLATS_TYPES_edit') %}active{% endif %}">
+    <a href="#">
+        <i class="fa fa-folder-o"></i>
+        <span>PLATS_TYPES</span>
+        <i class="fa pull-right fa-angle-right"></i>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+        <li {% if option is defined and option == 'PLATS_TYPES_list' %}class="active"{% endif %}><a href="{{ path('PLATS_TYPES_list') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Liste</a></li>
+        <li {% if option is defined and option == 'PLATS_TYPES_create' %}class="active"{% endif %}><a href="{{ path('PLATS_TYPES_create') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Créer</a></li>
+    </ul>
+</li>
+
+<li class="treeview {% if option is defined and (option == 'USERS_list' or option == 'USERS_create' or option == 'USERS_edit') %}active{% endif %}">
+    <a href="#">
+        <i class="fa fa-folder-o"></i>
+        <span>USERS</span>
+        <i class="fa pull-right fa-angle-right"></i>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+        <li {% if option is defined and option == 'USERS_list' %}class="active"{% endif %}><a href="{{ path('USERS_list') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Liste</a></li>
+        <li {% if option is defined and option == 'USERS_create' %}class="active"{% endif %}><a href="{{ path('USERS_create') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Créer</a></li>
+    </ul>
+</li>
+
+
+
 {% endblock %}

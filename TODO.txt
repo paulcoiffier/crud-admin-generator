@@ -1,0 +1,2 @@
+- Créeer une option pour utiliser les noms des champs ou les noms de colonnes pour les libellés de la datatable
+- Créer une options pour le language et préparer des templates en français
