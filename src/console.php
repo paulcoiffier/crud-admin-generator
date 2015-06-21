@@ -227,7 +227,7 @@ $console
                     if (strpos($table_column['type'], 'text') !== false) {
                         $EDIT_FORM_TEMPLATE .= "" .
                             "\t\t\t\t\t\t\t\t\t" . "<div class='form-group'>" . "\n" .
-                            "\t\t\t\t\t\t\t\t\t" . "    {{ form_label(form." . $table_column['comment'] . ") }}" . "\n" .
+                            "\t\t\t\t\t\t\t\t\t" . "    {{ form_label(form." . $table_column['name'] . ") }}" . "\n" .
                             "\t\t\t\t\t\t\t\t\t" . "    {{ form_widget(form." . $table_column['name'] . ", { attr: { 'class': 'form-control textarea', 'style': 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;' }}) }}" . "\n" .
                             "\t\t\t\t\t\t\t\t\t" . "</div>" . "\n\n";
                     } else {
