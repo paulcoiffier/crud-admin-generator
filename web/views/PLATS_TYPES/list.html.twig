@@ -21,14 +21,14 @@
 					}
 				],
 				rowCallback: function( row, data ) {
-					var actions = '<a href="PLATS_TYPES/edit/' + data.{{primary_key}} + '" class="btn btn-primary btn-xs">Edit</a> <a href="PLATS_TYPES/delete/' + data.{{primary_key}} + '" onclick="return confirm_delete();" class="btn btn-danger btn-xs">Supprimer</a>';
+					var actions = '<a href="PLATS_TYPES/edit/' + data.{{primary_key}} + '" class="btn btn-primary btn-xs">Edit</a> <a href="PLATS_TYPES/delete/' + data.{{primary_key}} + '" onclick="return confirm_delete();" class="btn btn-danger btn-xs">Delete</a>';
 					$('td:eq({{ table_columns|length }})', row).html( actions );
 				}
 			});
         });
 
         function confirm_delete(){
-            if(!confirm("Supprimer ? Cette action ne pourra être annulée")) {
+            if(!confirm("Are you sure? This action cannot be undone.")) { 
                 return false;
             }
         }
@@ -47,7 +47,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Plats_types liste
+                    Plats_types list
                 </h1>
             </section>
 
@@ -65,7 +65,7 @@
                             </div><!-- /.box-header -->
 
                             <div class="box-body table-responsive">
-                                <a class="btn btn-primary" href="{{ path('PLATS_TYPES_create') }}">Créer PLATS_TYPES</a><br /><br />
+                                <a class="btn btn-primary" href="{{ path('PLATS_TYPES_create') }}">Create new PLATS_TYPES</a><br /><br />
                                 <table id="PLATS_TYPES_list" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>

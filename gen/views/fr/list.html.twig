@@ -21,7 +21,7 @@
 					}
 				],
 				rowCallback: function( row, data ) {
-					var actions = '<a href="__TABLENAME__/edit/' + data.{{primary_key}} + '" class="btn btn-primary btn-xs">Edit</a> <a href="__TABLENAME__/delete/' + data.{{primary_key}} + '" onclick="return confirm_delete();" class="btn btn-danger btn-xs">Supprimer</a>';
+					var actions = '<a href="__TABLENAME__/edit/' + data.{{primary_key}} + '" class="btn btn-primary btn-xs">Modifier</a> <a href="__TABLENAME__/delete/' + data.{{primary_key}} + '" onclick="return confirm_delete();" class="btn btn-danger btn-xs">Supprimer</a>';
 					$('td:eq({{ table_columns|length }})', row).html( actions );
 				}
 			});

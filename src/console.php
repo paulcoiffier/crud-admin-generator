@@ -6,6 +6,9 @@
  * Author: Jon Segador <jonseg@gmail.com>
  * Web: http://crud-admin-generator.com
  *
+ * Contributors :
+ * Paul Coiffier - coiffier.paul@gmail.com
+ *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -99,7 +102,7 @@ $console
                         continue 2;
                     }
 
-                    if (substr($column['Field'], -3) == "_id") {
+                    if ((substr($column['Field'], -3) == "_id") || (substr($column['Field'], -3) == "_ID") ) {
                         $_table_name = substr($column['Field'], 0, -3);
 
                         if (in_array($_table_name, $_dbTables)) {
