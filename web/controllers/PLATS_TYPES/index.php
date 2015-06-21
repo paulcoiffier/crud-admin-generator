@@ -44,7 +44,7 @@ $app->match('/PLATS_TYPES/list', function (Symfony\Component\HttpFoundation\Requ
     
     $table_columns = array(
         		'plt_id', 
-		'plt_libelle', 
+		'plt_name', 
 		'plt_image_path', 
 		'plt_description', 
 
@@ -104,7 +104,7 @@ $app->match('/PLATS_TYPES', function () use ($app) {
     
 	$table_columns = array(
 		'plt_id', 
-		'plt_libelle', 
+		'plt_name', 
 		'plt_image_path', 
 		'plt_description', 
 
@@ -126,7 +126,7 @@ $app->match('/PLATS_TYPES', function () use ($app) {
 $app->match('/PLATS_TYPES/create', function () use ($app) {
     
     $initial_data = array(
-		'plt_libelle' => '', 
+		'plt_name' => '', 
 		'plt_image_path' => '', 
 		'plt_description' => '', 
 
@@ -136,7 +136,7 @@ $app->match('/PLATS_TYPES/create', function () use ($app) {
 
 
 
-	$form = $form->add('plt_libelle', 'text', array('required' => true));
+	$form = $form->add('plt_name', 'text', array('required' => true));
 	$form = $form->add('plt_image_path', 'text', array('required' => false));
 	$form = $form->add('plt_description', 'text', array('required' => false));
 
@@ -150,8 +150,8 @@ $app->match('/PLATS_TYPES/create', function () use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `PLATS_TYPES` (`plt_libelle`, `plt_image_path`, `plt_description`) VALUES (?, ?, ?)";
-            $app['db']->executeUpdate($update_query, array($data['plt_libelle'], $data['plt_image_path'], $data['plt_description']));            
+            $update_query = "INSERT INTO `PLATS_TYPES` (`plt_name`, `plt_image_path`, `plt_description`) VALUES (?, ?, ?)";
+            $app['db']->executeUpdate($update_query, array($data['plt_name'], $data['plt_image_path'], $data['plt_description']));            
 
 
             $app['session']->getFlashBag()->add(
@@ -191,7 +191,7 @@ $app->match('/PLATS_TYPES/edit/{id}', function ($id) use ($app) {
 
     
     $initial_data = array(
-		'plt_libelle' => $row_sql['plt_libelle'], 
+		'plt_name' => $row_sql['plt_name'], 
 		'plt_image_path' => $row_sql['plt_image_path'], 
 		'plt_description' => $row_sql['plt_description'], 
 
@@ -201,7 +201,7 @@ $app->match('/PLATS_TYPES/edit/{id}', function ($id) use ($app) {
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
 
-	$form = $form->add('plt_libelle', 'text', array('required' => true));
+	$form = $form->add('plt_name', 'text', array('required' => true));
 	$form = $form->add('plt_image_path', 'text', array('required' => false));
 	$form = $form->add('plt_description', 'text', array('required' => false));
 
@@ -215,8 +215,8 @@ $app->match('/PLATS_TYPES/edit/{id}', function ($id) use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `PLATS_TYPES` SET `plt_libelle` = ?, `plt_image_path` = ?, `plt_description` = ? WHERE `plt_id` = ?";
-            $app['db']->executeUpdate($update_query, array($data['plt_libelle'], $data['plt_image_path'], $data['plt_description'], $id));            
+            $update_query = "UPDATE `PLATS_TYPES` SET `plt_name` = ?, `plt_image_path` = ?, `plt_description` = ? WHERE `plt_id` = ?";
+            $app['db']->executeUpdate($update_query, array($data['plt_name'], $data['plt_image_path'], $data['plt_description'], $id));            
 
 
             $app['session']->getFlashBag()->add(

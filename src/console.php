@@ -239,7 +239,7 @@ $console
                     }
 
                     // pattern to match a name column, with or whitout a 3 to 4 Char prefix
-                    $search_names_foreigner_key = '#^(.{3,4}_)?(' . implode('|', $search_names_foreigner_key) . ')$#i';
+                    $search_names_foreigner_key = '/^(.{3,4}_)?(' . implode('|', $search_names_foreigner_key) . ')/i';
 
                     foreach ($external_table['columns'] as $external_column) {
                         if (preg_match($search_names_foreigner_key, $external_column['name'])) {

@@ -90,9 +90,9 @@ $app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $r
         for($i = 0; $i < count($table_columns); $i++){
 
 			if($table_columns[$i] == 'PLATS_TYPES_ID'){
-			    $findexternal_sql = 'SELECT `plt_id` FROM `PLATS_TYPES` WHERE `plt_id` = ?';
+			    $findexternal_sql = 'SELECT `plt_name` FROM `PLATS_TYPES` WHERE `plt_id` = ?';
 			    $findexternal_row = $app['db']->fetchAssoc($findexternal_sql, array($row_sql[$table_columns[$i]]));
-			    $rows[$row_key][$table_columns[$i]] = $findexternal_row['plt_id'];
+			    $rows[$row_key][$table_columns[$i]] = $findexternal_row['plt_name'];
 			}
 			else{
 			    $rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
@@ -150,10 +150,10 @@ $app->match('/PLATS/create', function () use ($app) {
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
 	$options = array();
-	$findexternal_sql = 'SELECT `plt_id`, `plt_id` FROM `PLATS_TYPES`';
+	$findexternal_sql = 'SELECT `plt_id`, `plt_name` FROM `PLATS_TYPES`';
 	$findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
 	foreach($findexternal_rows as $findexternal_row){
-	    $options[$findexternal_row['plt_id']] = $findexternal_row['plt_id'];
+	    $options[$findexternal_row['plt_id']] = $findexternal_row['plt_name'];
 	}
 	if(count($options) > 0){
 	    $form = $form->add('PLATS_TYPES_ID', 'choice', array(
@@ -237,10 +237,10 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
 	$options = array();
-	$findexternal_sql = 'SELECT `plt_id`, `plt_id` FROM `PLATS_TYPES`';
+	$findexternal_sql = 'SELECT `plt_id`, `plt_name` FROM `PLATS_TYPES`';
 	$findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
 	foreach($findexternal_rows as $findexternal_row){
-	    $options[$findexternal_row['plt_id']] = $findexternal_row['plt_id'];
+	    $options[$findexternal_row['plt_id']] = $findexternal_row['plt_name'];
 	}
 	if(count($options) > 0){
 	    $form = $form->add('PLATS_TYPES_ID', 'choice', array(

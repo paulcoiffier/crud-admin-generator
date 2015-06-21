@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="dacaaf8d-1195-4468-b20a-22f24bdb93ce" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/console.php" afterPath="$PROJECT_DIR$/src/console.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/views/fr/create.html.twig" afterPath="$PROJECT_DIR$/gen/views/fr/create.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/create.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/create.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/views/fr/edit.html.twig" afterPath="$PROJECT_DIR$/gen/views/fr/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/create.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/create.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/create.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/PLATS/index.php" afterPath="$PROJECT_DIR$/web/controllers/PLATS/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/views/fr/list.html.twig" afterPath="$PROJECT_DIR$/gen/views/fr/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/PLATS_TYPES/index.php" afterPath="$PROJECT_DIR$/web/controllers/PLATS_TYPES/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/list.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/list.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/list.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/list.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/list.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/list.html.twig" />
@@ -39,8 +40,8 @@
       <file leaf-file-name="console.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/console.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="104" column="104" selection-start-line="104" selection-start-column="104" selection-end-line="104" selection-end-column="104" />
+            <state vertical-scroll-proportion="0.45972738">
+              <caret line="241" column="47" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="47" />
               <folding>
                 <element signature="e#7#350#0#PHP" expanded="true" />
               </folding>
@@ -507,12 +508,12 @@
       <option name="number" value="Default" />
       <updated>1434917690518</updated>
       <workItem from="1434917691922" duration="1228000" />
-      <workItem from="1434918945969" duration="2659000" />
+      <workItem from="1434918945969" duration="3270000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3887000" />
+    <option name="totallyTimeSpent" value="4498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -764,8 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/console.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="104" column="104" selection-start-line="104" selection-start-column="104" selection-end-line="104" selection-end-column="104" />
+        <state vertical-scroll-proportion="0.45972738">
+          <caret line="241" column="47" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="47" />
           <folding>
             <element signature="e#7#350#0#PHP" expanded="true" />
           </folding>
