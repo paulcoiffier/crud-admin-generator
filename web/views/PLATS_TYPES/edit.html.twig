@@ -11,7 +11,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Modifier Plats_types {{ id }}
+                    Edit Plats_types {{ id }}
                 </h1>
             </section>
 
@@ -33,17 +33,17 @@
                                 <div class="box-body">
 
 									<div class='form-group'>
-									    {{ form_label(form.plt_name) }}
+									    {{ form_label(form.plt_name, '') }}
 									    {{ form_widget(form.plt_name, { attr: { 'class': 'form-control' }}) }}
 									</div>
 
 									<div class='form-group'>
-									    {{ form_label(form.plt_image_path) }}
+									    {{ form_label(form.plt_image_path, '') }}
 									    {{ form_widget(form.plt_image_path, { attr: { 'class': 'form-control' }}) }}
 									</div>
 
 									<div class='form-group'>
-									    {{ form_label(form.plt_description) }}
+									    {{ form_label(form.plt_description, '') }}
 									    {{ form_widget(form.plt_description, { attr: { 'class': 'form-control' }}) }}
 									</div>
 
@@ -54,7 +54,7 @@
                                 {{ form_rest(form) }}
 
                                 <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Valider</button>
+                                    <button type="submit" class="btn btn-primary">Edit</button>
                                 </div>
 
                             </div><!-- /.box -->

@@ -24,15 +24,31 @@ $console = new Application('CRUD Admin Generator command instalation', '1.0');
 
 $console
     ->register('generate:admin')
-    ->setDefinition(array(new InputOption('language', 'l', InputOption::VALUE_OPTIONAL, 'Specify crud interface language')))
+    ->setDefinition(array(new InputOption('language', 'l', InputOption::VALUE_OPTIONAL, 'Specify crud interface language'),
+        new InputOption('colmode', 'c', InputOption::VALUE_OPTIONAL, 'Use colunms names or comments')))
     ->setDescription("Generate administrator")
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
 
+        /** Get input options */
+
         $lang = $input->getOption('language');
+        /**
+         * Choose columns names or comments for CRUD UI
+         * f = fields
+         * c = comments
+         */
+        $colMode = $input->getOption('colmode');
+
+        if ($colMode == null) {
+            $colMode = "f";
+        }
+
         if ($lang == null) {
             $lang = "en";
         }
         $output->writeln("Create CRUD : " . $lang);
+        $output->writeln("Langue : " . $lang);
+        $output->writeln("Colmode : " . $colMode);
 
         $getTablesQuery = "SHOW TABLES";
         $getTablesResult = $app['db']->fetchAll($getTablesQuery, array());
@@ -102,7 +118,7 @@ $console
                         continue 2;
                     }
 
-                    if ((substr($column['Field'], -3) == "_id") || (substr($column['Field'], -3) == "_ID") ) {
+                    if ((substr($column['Field'], -3) == "_id") || (substr($column['Field'], -3) == "_ID")) {
                         $_table_name = substr($column['Field'], 0, -3);
 
                         if (in_array($_table_name, $_dbTables)) {
@@ -211,13 +227,13 @@ $console
                     if (strpos($table_column['type'], 'text') !== false) {
                         $EDIT_FORM_TEMPLATE .= "" .
                             "\t\t\t\t\t\t\t\t\t" . "<div class='form-group'>" . "\n" .
-                            "\t\t\t\t\t\t\t\t\t" . "    {{ form_label(form." . $table_column['name'] . ") }}" . "\n" .
+                            "\t\t\t\t\t\t\t\t\t" . "    {{ form_label(form." . $table_column['comment'] . ") }}" . "\n" .
                             "\t\t\t\t\t\t\t\t\t" . "    {{ form_widget(form." . $table_column['name'] . ", { attr: { 'class': 'form-control textarea', 'style': 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;' }}) }}" . "\n" .
                             "\t\t\t\t\t\t\t\t\t" . "</div>" . "\n\n";
                     } else {
                         $EDIT_FORM_TEMPLATE .= "" .
                             "\t\t\t\t\t\t\t\t\t" . "<div class='form-group'>" . "\n" .
-                            "\t\t\t\t\t\t\t\t\t" . "    {{ form_label(form." . $table_column['name'] . ") }}" . "\n" .
+                            "\t\t\t\t\t\t\t\t\t" . "    {{ form_label(form." . $table_column['name'] . ", '" . $table_column['comment'] . "') }}" . "\n" .
                             "\t\t\t\t\t\t\t\t\t" . "    {{ form_widget(form." . $table_column['name'] . ", { attr: { 'class': 'form-control' }}) }}" . "\n" .
                             "\t\t\t\t\t\t\t\t\t" . "</div>" . "\n\n";
                     }
@@ -343,7 +359,12 @@ $console
             $_controller = str_replace("__UPDATE_EXECUTE_FIELDS__", $UPDATE_EXECUTE_FIELDS, $_controller);
 
 
-            $_list_template = file_get_contents(__DIR__ . '/../gen/views/' . $lang . '/list.html.twig');
+            if ($colMode == "f") {
+                $_list_template = file_get_contents(__DIR__ . '/../gen/views/' . $lang . '/list.html.twig');
+            } else if ($colMode == "c") {
+                $_list_template = file_get_contents(__DIR__ . '/../gen/views/' . $lang . '/list.c.html.twig');
+            }
+
             $_list_template = str_replace("__TABLENAME__", $TABLENAME, $_list_template);
             $_list_template = str_replace("__TABLENAMEUP__", ucfirst(strtolower($TABLENAME)), $_list_template);
 

@@ -1,2 +1,7 @@
 - Créeer une option pour utiliser les noms des champs ou les noms de colonnes pour les libellés de la datatable
 - Créer une options pour le language et préparer des templates en français
+
+Pouvoir sécuriser le CRUD : 
+- Un seul compte admin / sécurité simple sans base de données
+- Plusieurs utilisateurs : création d'une base de données et application de la sécurité ?
+

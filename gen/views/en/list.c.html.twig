@@ -7,9 +7,9 @@
     <!-- page script -->
     <script type="text/javascript">
         $(function() {
-            $("#USERS_list").dataTable({
+            $("#__TABLENAME___list").dataTable({
 				serverSide: true,
-				ajax: 'USERS/list',
+				ajax: '__TABLENAME__/list',
 				columns: [
 					{% for table_column in table_columns %}
 					{ "data": "{{ table_column }}"},
@@ -21,7 +21,7 @@
 					}
 				],
 				rowCallback: function( row, data ) {
-					var actions = '<a href="USERS/edit/' + data.{{primary_key}} + '" class="btn btn-primary btn-xs">Edit</a> <a href="USERS/delete/' + data.{{primary_key}} + '" onclick="return confirm_delete();" class="btn btn-danger btn-xs">Delete</a>';
+					var actions = '<a href="__TABLENAME__/edit/' + data.{{primary_key}} + '" class="btn btn-primary btn-xs">Edit</a> <a href="__TABLENAME__/delete/' + data.{{primary_key}} + '" onclick="return confirm_delete();" class="btn btn-danger btn-xs">Delete</a>';
 					$('td:eq({{ table_columns|length }})', row).html( actions );
 				}
 			});
@@ -40,14 +40,14 @@
 
     <div class="wrapper row-offcanvas row-offcanvas-left">
 
-        {% include 'menu.html.twig' with {'option': 'USERS_list'} %}
+        {% include 'menu.html.twig' with {'option': '__TABLENAME___list'} %}
 
         <!-- Right side column. Contains the navbar and content of the page -->
         <aside class="right-side">                
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Users list
+                    __TABLENAMEUP__ list
                 </h1>
             </section>
 
@@ -65,8 +65,8 @@
                             </div><!-- /.box-header -->
 
                             <div class="box-body table-responsive">
-                                <a class="btn btn-primary" href="{{ path('USERS_create') }}">Create new USERS</a><br /><br />
-                                <table id="USERS_list" class="table table-bordered table-striped">
+                                <a class="btn btn-primary" href="{{ path('__TABLENAME___create') }}">Create new __TABLENAME__</a><br /><br />
+                                <table id="__TABLENAME___list" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             {% for table_column in table_columns_names %}

@@ -11,37 +11,37 @@
  */
 
 
-require_once __DIR__.'/../../../vendor/autoload.php';
-require_once __DIR__.'/../../../src/app.php';
+require_once __DIR__ . '/../../../vendor/autoload.php';
+require_once __DIR__ . '/../../../src/app.php';
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-$app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $request) use ($app) {  
+$app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $request) use ($app) {
     $start = 0;
     $vars = $request->query->all();
     $qsStart = (int)$vars["start"];
     $search = $vars["search"];
     $order = $vars["order"];
     $columns = $vars["columns"];
-    $qsLength = (int)$vars["length"];    
-    
-    if($qsStart) {
+    $qsLength = (int)$vars["length"];
+
+    if ($qsStart) {
         $start = $qsStart;
-    }    
-	
-    $index = $start;   
+    }
+
+    $index = $start;
     $rowsPerPage = $qsLength;
-       
+
     $rows = array();
-    
+
     $searchValue = $search['value'];
     $orderValue = $order[0];
-    
+
     $orderClause = "";
-    if($orderValue) {
-        $orderClause = " ORDER BY ". $columns[(int)$orderValue['column']]['data'] . " " . $orderValue['dir'];
+    if ($orderValue) {
+        $orderClause = " ORDER BY " . $columns[(int)$orderValue['column']]['data'] . " " . $orderValue['dir'];
     }
-    
+
     $table_columns = array(
         		'pla_id', 
 		'pla_libelle', 
@@ -54,7 +54,7 @@ $app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $r
 
     $table_columns_names = array(
         		'ID', 
-		'Libelle', 
+		'Libellé', 
 		'Description', 
 		'Prix', 
 		'Type de plat', 
@@ -64,32 +64,32 @@ $app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $r
 
 
     $whereClause = "";
-    
+
     $i = 0;
-    foreach($table_columns as $col){
-        
+    foreach ($table_columns as $col) {
+
         if ($i == 0) {
-           $whereClause = " WHERE";
+            $whereClause = " WHERE";
         }
-        
+
         if ($i > 0) {
-            $whereClause =  $whereClause . " OR"; 
+            $whereClause = $whereClause . " OR";
         }
-        
-        $whereClause =  $whereClause . " " . $col . " LIKE '%". $searchValue ."%'";
-        
+
+        $whereClause = $whereClause . " " . $col . " LIKE '%" . $searchValue . "%'";
+
         $i = $i + 1;
     }
-    
+
     $recordsTotal = $app['db']->executeQuery("SELECT * FROM `PLATS`" . $whereClause . $orderClause)->rowCount();
-    
-    $find_sql = "SELECT * FROM `PLATS`". $whereClause . $orderClause . " LIMIT ". $index . "," . $rowsPerPage;
+
+    $find_sql = "SELECT * FROM `PLATS`" . $whereClause . $orderClause . " LIMIT " . $index . "," . $rowsPerPage;
     $rows_sql = $app['db']->fetchAll($find_sql, array());
 
-    foreach($rows_sql as $row_key => $row_sql){
-        for($i = 0; $i < count($table_columns); $i++){
+    foreach ($rows_sql as $row_key => $row_sql) {
+        for ($i = 0; $i < count($table_columns); $i++) {
 
-			if($table_columns[$i] == 'PLATS_TYPES_ID'){
+            			if($table_columns[$i] == 'PLATS_TYPES_ID'){
 			    $findexternal_sql = 'SELECT `plt_name` FROM `PLATS_TYPES` WHERE `plt_id` = ?';
 			    $findexternal_row = $app['db']->fetchAssoc($findexternal_sql, array($row_sql[$table_columns[$i]]));
 			    $rows[$row_key][$table_columns[$i]] = $findexternal_row['plt_name'];
@@ -100,21 +100,21 @@ $app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $r
 
 
         }
-    }    
-    
+    }
+
     $queryData = new queryData();
     $queryData->start = $start;
     $queryData->recordsTotal = $recordsTotal;
     $queryData->recordsFiltered = $recordsTotal;
     $queryData->data = $rows;
-    
+
     return new Symfony\Component\HttpFoundation\Response(json_encode($queryData), 200);
 });
 
 $app->match('/PLATS', function () use ($app) {
-    
-	$table_columns = array(
-		'pla_id', 
+
+    $table_columns = array(
+        		'pla_id', 
 		'pla_libelle', 
 		'pla_description', 
 		'pla_prix', 
@@ -123,23 +123,32 @@ $app->match('/PLATS', function () use ($app) {
 
     );
 
-    $primary_key = "pla_id";	
+    $table_columns_names = array(
+        		'ID', 
+		'Libellé', 
+		'Description', 
+		'Prix', 
+		'Type de plat', 
+		'Image', 
+
+    );
+
+    $primary_key = "pla_id";
 
     return $app['twig']->render('PLATS/list.html.twig', array(
-    	"table_columns" => $table_columns,
+        "table_columns" => $table_columns,
         "table_columns_names" => $table_columns_names,
         "primary_key" => $primary_key
     ));
-        
-})
-->bind('PLATS_list');
 
+})
+    ->bind('PLATS_list');
 
 
 $app->match('/PLATS/create', function () use ($app) {
-    
+
     $initial_data = array(
-		'pla_libelle' => '', 
+        		'pla_libelle' => '', 
 		'pla_description' => '', 
 		'pla_prix' => '', 
 		'PLATS_TYPES_ID' => '', 
@@ -149,7 +158,7 @@ $app->match('/PLATS/create', function () use ($app) {
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-	$options = array();
+    	$options = array();
 	$findexternal_sql = 'SELECT `plt_id`, `plt_name` FROM `PLATS_TYPES`';
 	$findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
 	foreach($findexternal_rows as $findexternal_row){
@@ -177,7 +186,7 @@ $app->match('/PLATS/create', function () use ($app) {
 
     $form = $form->getForm();
 
-    if("POST" == $app['request']->getMethod()){
+    if ("POST" == $app['request']->getMethod()) {
 
         $form->handleRequest($app["request"]);
 
@@ -185,7 +194,7 @@ $app->match('/PLATS/create', function () use ($app) {
             $data = $form->getData();
 
             $update_query = "INSERT INTO `PLATS` (`pla_libelle`, `pla_description`, `pla_prix`, `PLATS_TYPES_ID`, `pla_image_path`) VALUES (?, ?, ?, ?, ?)";
-            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_ID'], $data['pla_image_path']));            
+            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_ID'], $data['pla_image_path']));
 
 
             $app['session']->getFlashBag()->add(
@@ -204,8 +213,7 @@ $app->match('/PLATS/create', function () use ($app) {
     ));
         
 })
-->bind('PLATS_create');
-
+    ->bind('PLATS_create');
 
 
 $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
@@ -213,19 +221,19 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
     $find_sql = "SELECT * FROM `PLATS` WHERE `pla_id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
 
-    if(!$row_sql){
+    if (!$row_sql) {
         $app['session']->getFlashBag()->add(
             'danger',
             array(
                 'message' => 'Row not found!',
             )
-        );        
+        );
         return $app->redirect($app['url_generator']->generate('PLATS_list'));
     }
 
-    
+
     $initial_data = array(
-		'pla_libelle' => $row_sql['pla_libelle'], 
+        		'pla_libelle' => $row_sql['pla_libelle'], 
 		'pla_description' => $row_sql['pla_description'], 
 		'pla_prix' => $row_sql['pla_prix'], 
 		'PLATS_TYPES_ID' => $row_sql['PLATS_TYPES_ID'], 
@@ -236,7 +244,7 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-	$options = array();
+    	$options = array();
 	$findexternal_sql = 'SELECT `plt_id`, `plt_name` FROM `PLATS_TYPES`';
 	$findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
 	foreach($findexternal_rows as $findexternal_row){
@@ -263,7 +271,7 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
 
     $form = $form->getForm();
 
-    if("POST" == $app['request']->getMethod()){
+    if ("POST" == $app['request']->getMethod()) {
 
         $form->handleRequest($app["request"]);
 
@@ -271,7 +279,7 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
             $data = $form->getData();
 
             $update_query = "UPDATE `PLATS` SET `pla_libelle` = ?, `pla_description` = ?, `pla_prix` = ?, `PLATS_TYPES_ID` = ?, `pla_image_path` = ? WHERE `pla_id` = ?";
-            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_ID'], $data['pla_image_path'], $id));            
+            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_ID'], $data['pla_image_path'], $id));
 
 
             $app['session']->getFlashBag()->add(
@@ -291,8 +299,7 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
     ));
         
 })
-->bind('PLATS_edit');
-
+    ->bind('PLATS_edit');
 
 
 $app->match('/PLATS/delete/{id}', function ($id) use ($app) {
@@ -300,7 +307,7 @@ $app->match('/PLATS/delete/{id}', function ($id) use ($app) {
     $find_sql = "SELECT * FROM `PLATS` WHERE `pla_id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
 
-    if($row_sql){
+    if ($row_sql) {
         $delete_query = "DELETE FROM `PLATS` WHERE `pla_id` = ?";
         $app['db']->executeUpdate($delete_query, array($id));
 
@@ -310,20 +317,19 @@ $app->match('/PLATS/delete/{id}', function ($id) use ($app) {
                 'message' => 'PLATS deleted!',
             )
         );
-    }
-    else{
+    } else {
         $app['session']->getFlashBag()->add(
             'danger',
             array(
                 'message' => 'Row not found!',
             )
-        );  
+        );
     }
 
     return $app->redirect($app['url_generator']->generate('PLATS_list'));
 
 })
-->bind('PLATS_delete');
+    ->bind('PLATS_delete');
 
 
 

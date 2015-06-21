@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dacaaf8d-1195-4468-b20a-22f24bdb93ce" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/views/en/list.c.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/views/fr/list.c.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.txt" afterPath="$PROJECT_DIR$/TODO.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/console.php" afterPath="$PROJECT_DIR$/src/console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/controller.php" afterPath="$PROJECT_DIR$/gen/controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/create.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/create.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/create.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/create.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/create.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/create.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/PLATS/index.php" afterPath="$PROJECT_DIR$/web/controllers/PLATS/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/PLATS_TYPES/index.php" afterPath="$PROJECT_DIR$/web/controllers/PLATS_TYPES/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/USERS/index.php" afterPath="$PROJECT_DIR$/web/controllers/USERS/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/list.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/list.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/list.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/list.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/list.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/list.html.twig" />
@@ -40,10 +46,49 @@
       <file leaf-file-name="console.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/console.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45972738">
-              <caret line="241" column="47" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.3605948">
+              <caret line="235" column="133" selection-start-line="235" selection-start-column="133" selection-end-line="235" selection-end-column="133" />
               <folding>
                 <element signature="e#7#350#0#PHP" expanded="true" />
+                <marker date="1434923574532" expanded="true" signature="12492:12556" placeholder="SELECT `&quot; . ..." />
+                <marker date="1434923574532" expanded="true" signature="13149:13246" placeholder="SELECT `&quot; . ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/views/PLATS/list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923">
+              <caret line="71" column="86" selection-start-line="71" selection-start-column="67" selection-end-line="71" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controllers/PLATS/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.883333">
+              <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gen/controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
+              <folding>
+                <marker date="1434922995454" expanded="true" signature="1674:1703" placeholder="SELECT * FRO..." />
+                <marker date="1434922995454" expanded="true" signature="1767:1853" placeholder="SELECT * FRO..." />
+                <marker date="1434922995454" expanded="true" signature="3382:3468" placeholder="INSERT INTO ..." />
+                <marker date="1434922995454" expanded="true" signature="4115:4177" placeholder="SELECT * FRO..." />
+                <marker date="1434922995454" expanded="true" signature="5725:5787" placeholder="SELECT * FRO..." />
+                <marker date="1434922995454" expanded="true" signature="5898:5958" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -75,11 +120,13 @@
         <option value="$PROJECT_DIR$/src/app.php" />
         <option value="$PROJECT_DIR$/web/views/USERS/list.html.twig" />
         <option value="$PROJECT_DIR$/web/controllers/PLATS/index.php" />
-        <option value="$PROJECT_DIR$/gen/controller.php" />
         <option value="$PROJECT_DIR$/web/views/PLATS/list.html.twig" />
         <option value="$PROJECT_DIR$/gen/views/fr/list.html.twig" />
         <option value="$PROJECT_DIR$/gen/views/fr/create.html.twig" />
         <option value="$PROJECT_DIR$/gen/views/fr/edit.html.twig" />
+        <option value="$PROJECT_DIR$/gen/views/fr/list.c.html.twig" />
+        <option value="$PROJECT_DIR$/gen/views/en/list.c.html.twig" />
+        <option value="$PROJECT_DIR$/gen/controller.php" />
         <option value="$PROJECT_DIR$/src/console.php" />
       </list>
     </option>
@@ -185,6 +232,68 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PLATS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PLATS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -220,6 +329,32 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -235,8 +370,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\crud\gen\views\en" />
       <recent name="C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\crud\gen\views\fr" />
+      <recent name="C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\crud\gen\views\en" />
     </key>
   </component>
   <component name="RunManager">
@@ -508,12 +643,12 @@
       <option name="number" value="Default" />
       <updated>1434917690518</updated>
       <workItem from="1434917691922" duration="1228000" />
-      <workItem from="1434918945969" duration="3270000" />
+      <workItem from="1434918945969" duration="4628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4498000" />
+    <option name="totallyTimeSpent" value="5856000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -601,6 +736,8 @@
           <caret line="227" column="83" selection-start-line="227" selection-start-column="83" selection-end-line="227" selection-end-column="83" />
           <folding>
             <element signature="e#7#350#0#PHP" expanded="true" />
+            <marker date="1434923574532" expanded="true" signature="12492:12556" placeholder="SELECT `&quot; . ..." />
+            <marker date="1434923574532" expanded="true" signature="13149:13246" placeholder="SELECT `&quot; . ..." />
           </folding>
         </state>
       </provider>
@@ -651,26 +788,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/PLATS/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.3">
-          <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gen/base.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/PLATS/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="67" column="58" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -703,14 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.483333">
-          <caret line="112" column="34" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -763,12 +876,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gen/views/fr/list.c.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.26923">
+          <caret line="79" column="86" selection-start-line="79" selection-start-column="67" selection-end-line="79" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/views/en/list.c.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62663496">
+          <caret line="79" column="86" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/PLATS/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="71" column="86" selection-start-line="71" selection-start-column="67" selection-end-line="71" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/PLATS/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.883333">
+          <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
+          <folding>
+            <marker date="1434922995454" expanded="true" signature="1674:1703" placeholder="SELECT * FRO..." />
+            <marker date="1434922995454" expanded="true" signature="1767:1853" placeholder="SELECT * FRO..." />
+            <marker date="1434922995454" expanded="true" signature="3382:3468" placeholder="INSERT INTO ..." />
+            <marker date="1434922995454" expanded="true" signature="4115:4177" placeholder="SELECT * FRO..." />
+            <marker date="1434922995454" expanded="true" signature="5725:5787" placeholder="SELECT * FRO..." />
+            <marker date="1434922995454" expanded="true" signature="5898:5958" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/console.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45972738">
-          <caret line="241" column="47" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.3605948">
+          <caret line="235" column="133" selection-start-line="235" selection-start-column="133" selection-end-line="235" selection-end-column="133" />
           <folding>
             <element signature="e#7#350#0#PHP" expanded="true" />
+            <marker date="1434923574532" expanded="true" signature="12492:12556" placeholder="SELECT `&quot; . ..." />
+            <marker date="1434923574532" expanded="true" signature="13149:13246" placeholder="SELECT `&quot; . ..." />
           </folding>
         </state>
       </provider>
