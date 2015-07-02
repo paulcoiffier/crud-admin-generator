@@ -25,6 +25,3 @@ Création de deux commandes  :
 - Génération des fichiers de mapping
 - Génération du CRUD
 - Créer une commande avec alias comme dans liberta pour eviter "php console:"
-
-
-TEST
