@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Crud-admin-generator by paulcoiffier</title>
+    <title>Liberta CRUD Generator by paulcoiffier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Crud-admin-generator</h1>
+      <h1 class="project-name">Liberta CRUD Generator</h1>
       <h2 class="project-tagline">An open source tool to generate a complete backend from a MySql database.</h2>
       <a href="https://github.com/paulcoiffier/liberta-crud-generator" class="btn">View on GitHub</a>
       <a href="https://github.com/paulcoiffier/liberta-crud-generator/zipball/master" class="btn">Download .zip</a>
@@ -20,12 +20,14 @@
 
     <section class="main-content">
       <h1>
-<a id="crud-admin-generator" class="anchor" href="#crud-admin-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>CRUD Admin Generator</h1>
+<a id="liberta-crud-generator" class="anchor" href="#liberta-crud-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Liberta CRUD Generator</h1>
 
 <h2>
-<a id="what-is-crud-admin-generator" class="anchor" href="#what-is-crud-admin-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is CRUD Admin Generator?</h2>
+<a id="what-is-liberta-crud-generator" class="anchor" href="#what-is-liberta-crud-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Liberta CRUD Generator?</h2>
 
-<p><strong>CRUD Admin Generator</strong> (<a href="http://crud-admin-generator.com">http://crud-admin-generator.com</a>) is a tool to <strong>generate a complete backend from a MySql database</strong> where you can create, read, update and delete records in a database. </p>
+<p>This project is a fork a "crud-amin-generator" ([<a href="http://crud-admin-generator.com%5D%5B1">http://crud-admin-generator.com][1</a>])</p>
+
+<p><strong>Liberta CRUD Generator</strong> ([<a href="http://paulcoiffier.github.io/liberta-crud-generator/%5D%5B1">http://paulcoiffier.github.io/liberta-crud-generator/][1</a>]) is a tool to <strong>generate a complete backend from a MySql database</strong> where you can create, read, update and delete records in a database. </p>
 
 <p><strong>The backend is generated in seconds</strong> without configuration files where there is a lot of <em>"magic"</em> and is very difficult to adapt to your needs. </p>
 
@@ -38,7 +40,7 @@
 
 <p>Clone the repository</p>
 
-<pre><code>git clone https://github.com/jonseg/crud-admin-generator.git admingenerator
+<pre><code>git clone https://github.com/paulcoiffier/liberta-crud-generator.git
 
 cd admingenerator
 </code></pre>
@@ -54,28 +56,6 @@ cd admingenerator
 </code></pre>
 
 <p>You need point the document root of your virtual host to /path_to/admingenerator/web</p>
-
-<p>This is an example of VirtualHost:</p>
-
-<pre><code>&lt;VirtualHost *:80&gt;
-    DocumentRoot /path_to/admingenerator/web
-    DirectoryIndex index.php
-    &lt;Directory "/path_to/admingenerator/web"&gt;
-        Options Indexes FollowSymLinks
-        Order Allow,Deny
-        Allow from all
-        AllowOverride all
-        &lt;IfModule mod_php5.c&gt;
-            php_admin_flag engine on
-            php_admin_flag safe_mode off
-            php_admin_value open_basedir none
-        &lt;/ifModule&gt;
-    &lt;/Directory&gt;
-&lt;/VirtualHost&gt;
-</code></pre>
-
-<p>You can customize the url using the .htaccess file, maybe this will help you:
-<a href="http://stackoverflow.com/questions/24952846/how-do-i-remove-the-web-from-my-url/24953439#24953439">http://stackoverflow.com/questions/24952846/how-do-i-remove-the-web-from-my-url/24953439#24953439</a></p>
 
 <h2>
 <a id="generate-crud-backend" class="anchor" href="#generate-crud-backend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generate CRUD backend</h2>
@@ -149,18 +129,14 @@ cd admingenerator
 <a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
 
 <ul>
-<li>Jon Segador <a href="mailto:info@jonsegador.com">info@jonsegador.com</a>
+<li>Paul Coiffier <a href="mailto:coiffier.paul@gmail.com">coiffier.paul@gmail.com</a>
 </li>
-<li>Personal site: <a href="http://jonsegador.com/">http://jonsegador.com/</a>
-</li>
-<li>Twitter: <em><a href="https://twitter.com/jonseg">@jonseg</a></em>
-</li>
-<li>CRUD Admin Generator webpage: <a href="http://crud-admin-generator.com">http://crud-admin-generator.com</a>
+<li>Personal site: <a href="http://mobissime.com/">http://mobissime.com/</a>
 </li>
 </ul>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/paulcoiffier/liberta-crud-generator">Crud-admin-generator</a> is maintained by <a href="https://github.com/paulcoiffier">paulcoiffier</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/paulcoiffier/liberta-crud-generator">Liberta CRUD Generator</a> is maintained by <a href="https://github.com/paulcoiffier">paulcoiffier</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
