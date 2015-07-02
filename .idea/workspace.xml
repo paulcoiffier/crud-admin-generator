@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dacaaf8d-1195-4468-b20a-22f24bdb93ce" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.txt" afterPath="$PROJECT_DIR$/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/create.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/create.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/create.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/create.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/create.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/create.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/PLATS_TYPES/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/PLATS_TYPES/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/USERS/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/USERS/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/PLATS/index.php" afterPath="$PROJECT_DIR$/web/controllers/PLATS/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/PLATS_TYPES/index.php" afterPath="$PROJECT_DIR$/web/controllers/PLATS_TYPES/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controllers/USERS/index.php" afterPath="$PROJECT_DIR$/web/controllers/USERS/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="dacaaf8d-1195-4468-b20a-22f24bdb93ce" name="Default" comment="" />
     <ignored path="crud.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -469,12 +457,12 @@
       <workItem from="1434918945969" duration="6455000" />
       <workItem from="1435268296166" duration="3483000" />
       <workItem from="1435699934307" duration="71000" />
-      <workItem from="1435864694412" duration="1677000" />
+      <workItem from="1435864694412" duration="1766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12914000" />
+    <option name="totallyTimeSpent" value="13003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
