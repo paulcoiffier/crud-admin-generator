@@ -5,3 +5,26 @@ Pouvoir sécuriser le CRUD :
 - Un seul compte admin / sécurité simple sans base de données
 - Plusieurs utilisateurs : création d'une base de données et application de la sécurité ?
 
+Pouvoir faire une description poussée dans un fichier YAML. Dans ce cas on peux mapper des types de champs et par exemple ajouter un fileUpload lié à un champs... 
+- Pouvoir préciser le libellé d'une table au lieu d'afficher le nom pour les actions, etc
+- On peux choisir les colonnes à afficher, ou pas
+- On peux indiquer que le champs contient l'url d'une image à afficher
+- Sur une relation / un select : on peux indiquer le nom du champs à mapper en face pour le libelle
+
+
+Bouton annuler sur la création d'un objet
+
+
+Options console :
+1) on créé le fichier template / généré avec les tables et noms de champs et types de champs et propriétés par défaut
+2) on peux modifier le fichier et le passer en params pour la génération du CRUD
+
+
+Architecture de l'application
+Création de deux commandes  :
+- Génération des fichiers de mapping
+- Génération du CRUD
+- Créer une commande avec alias comme dans liberta pour eviter "php console:"
+
+
+TEST

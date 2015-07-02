@@ -51,10 +51,10 @@ $app->match('/PLATS_TYPES/list', function (Symfony\Component\HttpFoundation\Requ
     );
 
     $table_columns_names = array(
-        		'', 
-		'', 
-		'', 
-		'', 
+        		'ID', 
+		'Nom', 
+		'Image', 
+		'Description', 
 
     );
 
@@ -111,10 +111,10 @@ $app->match('/PLATS_TYPES', function () use ($app) {
     );
 
     $table_columns_names = array(
-        		'', 
-		'', 
-		'', 
-		'', 
+        		'ID', 
+		'Nom', 
+		'Image', 
+		'Description', 
 
     );
 

@@ -47,7 +47,7 @@ $app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $r
 		'pla_libelle', 
 		'pla_description', 
 		'pla_prix', 
-		'PLATS_TYPES_ID', 
+		'PLATS_TYPES_id', 
 		'pla_image_path', 
 
     );
@@ -89,7 +89,7 @@ $app->match('/PLATS/list', function (Symfony\Component\HttpFoundation\Request $r
     foreach ($rows_sql as $row_key => $row_sql) {
         for ($i = 0; $i < count($table_columns); $i++) {
 
-            			if($table_columns[$i] == 'PLATS_TYPES_ID'){
+            			if($table_columns[$i] == 'PLATS_TYPES_id'){
 			    $findexternal_sql = 'SELECT `plt_name` FROM `PLATS_TYPES` WHERE `plt_id` = ?';
 			    $findexternal_row = $app['db']->fetchAssoc($findexternal_sql, array($row_sql[$table_columns[$i]]));
 			    $rows[$row_key][$table_columns[$i]] = $findexternal_row['plt_name'];
@@ -118,7 +118,7 @@ $app->match('/PLATS', function () use ($app) {
 		'pla_libelle', 
 		'pla_description', 
 		'pla_prix', 
-		'PLATS_TYPES_ID', 
+		'PLATS_TYPES_id', 
 		'pla_image_path', 
 
     );
@@ -151,7 +151,7 @@ $app->match('/PLATS/create', function () use ($app) {
         		'pla_libelle' => '', 
 		'pla_description' => '', 
 		'pla_prix' => '', 
-		'PLATS_TYPES_ID' => '', 
+		'PLATS_TYPES_id' => '', 
 		'pla_image_path' => '', 
 
     );
@@ -165,7 +165,7 @@ $app->match('/PLATS/create', function () use ($app) {
 	    $options[$findexternal_row['plt_id']] = $findexternal_row['plt_name'];
 	}
 	if(count($options) > 0){
-	    $form = $form->add('PLATS_TYPES_ID', 'choice', array(
+	    $form = $form->add('PLATS_TYPES_id', 'choice', array(
 	        'required' => true,
 	        'choices' => $options,
 	        'expanded' => false,
@@ -173,7 +173,7 @@ $app->match('/PLATS/create', function () use ($app) {
 	    ));
 	}
 	else{
-	    $form = $form->add('PLATS_TYPES_ID', 'text', array('required' => true));
+	    $form = $form->add('PLATS_TYPES_id', 'text', array('required' => true));
 	}
 
 
@@ -193,8 +193,8 @@ $app->match('/PLATS/create', function () use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `PLATS` (`pla_libelle`, `pla_description`, `pla_prix`, `PLATS_TYPES_ID`, `pla_image_path`) VALUES (?, ?, ?, ?, ?)";
-            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_ID'], $data['pla_image_path']));
+            $update_query = "INSERT INTO `PLATS` (`pla_libelle`, `pla_description`, `pla_prix`, `PLATS_TYPES_id`, `pla_image_path`) VALUES (?, ?, ?, ?, ?)";
+            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_id'], $data['pla_image_path']));
 
 
             $app['session']->getFlashBag()->add(
@@ -236,7 +236,7 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
         		'pla_libelle' => $row_sql['pla_libelle'], 
 		'pla_description' => $row_sql['pla_description'], 
 		'pla_prix' => $row_sql['pla_prix'], 
-		'PLATS_TYPES_ID' => $row_sql['PLATS_TYPES_ID'], 
+		'PLATS_TYPES_id' => $row_sql['PLATS_TYPES_id'], 
 		'pla_image_path' => $row_sql['pla_image_path'], 
 
     );
@@ -251,7 +251,7 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
 	    $options[$findexternal_row['plt_id']] = $findexternal_row['plt_name'];
 	}
 	if(count($options) > 0){
-	    $form = $form->add('PLATS_TYPES_ID', 'choice', array(
+	    $form = $form->add('PLATS_TYPES_id', 'choice', array(
 	        'required' => true,
 	        'choices' => $options,
 	        'expanded' => false,
@@ -259,7 +259,7 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
 	    ));
 	}
 	else{
-	    $form = $form->add('PLATS_TYPES_ID', 'text', array('required' => true));
+	    $form = $form->add('PLATS_TYPES_id', 'text', array('required' => true));
 	}
 
 
@@ -278,8 +278,8 @@ $app->match('/PLATS/edit/{id}', function ($id) use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `PLATS` SET `pla_libelle` = ?, `pla_description` = ?, `pla_prix` = ?, `PLATS_TYPES_ID` = ?, `pla_image_path` = ? WHERE `pla_id` = ?";
-            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_ID'], $data['pla_image_path'], $id));
+            $update_query = "UPDATE `PLATS` SET `pla_libelle` = ?, `pla_description` = ?, `pla_prix` = ?, `PLATS_TYPES_id` = ?, `pla_image_path` = ? WHERE `pla_id` = ?";
+            $app['db']->executeUpdate($update_query, array($data['pla_libelle'], $data['pla_description'], $data['pla_prix'], $data['PLATS_TYPES_id'], $data['pla_image_path'], $id));
 
 
             $app['session']->getFlashBag()->add(

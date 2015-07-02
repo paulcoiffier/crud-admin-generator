@@ -56,15 +56,15 @@ $app->match('/USERS/list', function (Symfony\Component\HttpFoundation\Request $r
     );
 
     $table_columns_names = array(
-        		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
+        		'ID', 
+		'Nom', 
+		'Prénom', 
+		'Adresse', 
+		'Code postal', 
+		'Ville', 
+		'Téléphone', 
+		'Email', 
+		'Mot de passe', 
 
     );
 
@@ -126,15 +126,15 @@ $app->match('/USERS', function () use ($app) {
     );
 
     $table_columns_names = array(
-        		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
-		'', 
+        		'ID', 
+		'Nom', 
+		'Prénom', 
+		'Adresse', 
+		'Code postal', 
+		'Ville', 
+		'Téléphone', 
+		'Email', 
+		'Mot de passe', 
 
     );
 
