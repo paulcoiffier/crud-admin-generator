@@ -6,7 +6,7 @@ What is Liberta CRUD Generator?
 
 This project is a fork a "crud-amin-generator" ([http://crud-admin-generator.com][1])
 
-**Liberta CRUD Generator**  is a tool to **generate a complete backend from a MySql database** where you can create, read, update and delete records in a database. 
+**Liberta CRUD Generator** ([http://paulcoiffier.github.io/liberta-crud-generator/][1]) is a tool to **generate a complete backend from a MySql database** where you can create, read, update and delete records in a database. 
 
 **The backend is generated in seconds** without configuration files where there is a lot of *"magic"* and is very difficult to adapt to your needs. 
 
