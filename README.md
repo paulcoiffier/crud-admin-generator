@@ -1,10 +1,12 @@
 CRUD Admin Generator
 ===================
 
-What is CRUD Admin Generator?
+What is Liberta CRUD Generator?
 -----------------------------
 
-**CRUD Admin Generator** ([http://crud-admin-generator.com][1]) is a tool to **generate a complete backend from a MySql database** where you can create, read, update and delete records in a database. 
+**Liberta CRUD Generator**  is a tool to **generate a complete backend from a MySql database** where you can create, read, update and delete records in a database. 
+
+This project is a fork a "crud-amin-generator" ([http://crud-admin-generator.com][1])
 
 **The backend is generated in seconds** without configuration files where there is a lot of *"magic"* and is very difficult to adapt to your needs. 
 
@@ -18,7 +20,7 @@ Installation
 
 Clone the repository
 
-    git clone https://github.com/jonseg/crud-admin-generator.git admingenerator
+    git clone https://github.com/paulcoiffier/crud-admin-generator.git
 
     cd admingenerator
 
@@ -31,28 +33,6 @@ Install vendors:
     php composer.phar install
 
 You need point the document root of your virtual host to /path_to/admingenerator/web
-
-This is an example of VirtualHost:
-
-    <VirtualHost *:80>
-        DocumentRoot /path_to/admingenerator/web
-        DirectoryIndex index.php
-        <Directory "/path_to/admingenerator/web">
-            Options Indexes FollowSymLinks
-            Order Allow,Deny
-            Allow from all
-            AllowOverride all
-            <IfModule mod_php5.c>
-                php_admin_flag engine on
-                php_admin_flag safe_mode off
-                php_admin_value open_basedir none
-            </ifModule>
-        </Directory>
-    </VirtualHost>
-    
-You can customize the url using the .htaccess file, maybe this will help you:
-[http://stackoverflow.com/questions/24952846/how-do-i-remove-the-web-from-my-url/24953439#24953439](http://stackoverflow.com/questions/24952846/how-do-i-remove-the-web-from-my-url/24953439#24953439)
-
 
 Generate CRUD backend
 ---------------------
@@ -120,10 +100,5 @@ Some suggestions for improvement could be:
 Author
 ------
 
-* Jon Segador <info@jonsegador.com>
-* Personal site: [http://jonsegador.com/](http://jonsegador.com/)
-* Twitter: *[@jonseg](https://twitter.com/jonseg)*
-* CRUD Admin Generator webpage: [http://crud-admin-generator.com](http://crud-admin-generator.com)
-
-
-  [1]: http://crud-admin-generator.com
+* Paul Coiffier <coiffier.paul@gmail.com>
+* Personal site: [http://mobissime.com/](http://mobissime.com/)
