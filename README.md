@@ -20,7 +20,7 @@ Installation
 
 Clone the repository
 
-    git clone https://github.com/paulcoiffier/crud-admin-generator.git
+    git clone https://github.com/paulcoiffier/liberta-crud-generator.git
 
     cd admingenerator
 
