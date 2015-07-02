@@ -1,4 +1,6 @@
 vendor/
 composer.lock
 web/controllers/*
+!web/controllers/.htaccess
 web/views/*
+!web/views/.htaccess
